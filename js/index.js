@@ -14,6 +14,7 @@ const btnPulsado = (e, pos) => {
 
     if(hasWon()){
         alert(`Player ${color} ha ganado!`)
+        turno = 0
     }
 }
 
@@ -58,4 +59,8 @@ const hasWon = () => {
 
 document.querySelectorAll("button").forEach((btn, i)=>{
     btn.addEventListener("click", (e)=> btnPulsado(e, i))
+})
+
+document.getElementById("resetButton").addEventListener("click", ()=>{
+    location.reload()
 })

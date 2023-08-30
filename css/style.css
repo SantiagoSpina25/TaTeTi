@@ -15,13 +15,19 @@ body {
     background: linear-gradient( rgb(21, 119, 21), rgb(70, 191, 70) , rgb(31, 149, 131))
 }
 
-button {
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container button {
     width: 200px;
     height: 200px;
     background-color: rgb(128, 128, 128);
 }
 
-button:hover{
+.container button:hover{
     border: 2px solid rgb(255, 0, 0);
     cursor: pointer;
 }
@@ -31,4 +37,20 @@ button:hover{
     grid-template-columns: repeat(3, 1fr);
     width: 600px;
     gap: 1px;
+}
+
+.resetButton {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(166, 219, 254) !important;
+    margin-left: 30px;
+    background-image: url("../img/reset.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+}
+
+.resetButton:hover {
+    cursor: pointer;
 }
