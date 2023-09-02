@@ -8,18 +8,21 @@ const tablero = []
 const btnPulsado = (e, pos) => {
 
     const btn = e.target
-    const color = turno % 2 ? "salmon" : "lawngreen"
+    const jugador = turno % 2 ? "1" : "2"
+    const simbolo = turno % 2 ? `url("../img/x.svg")` : `url("../img/circle.svg")`
+
     if(tablero[pos]){
         alert("Este punto ya tiene un color")
     }
     else{
         turno ++
-        btn.style.backgroundColor = color
-        tablero[pos] = color
+        btn.style.backgroundImage = simbolo
+        // btn.style.backgroundColor = color
+        tablero[pos] = jugador
     }
 
     if(hasWon()){
-        alert(`Player ${color} ha ganado!`)
+        alert(`Player ${jugador} ha ganado!`)
         turno = 0
     }
 }
