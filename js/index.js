@@ -6,11 +6,17 @@ const tablero = []
 
 
 const btnPulsado = (e, pos) => {
-    turno ++
+
     const btn = e.target
     const color = turno % 2 ? "salmon" : "lawngreen"
-    btn.style.backgroundColor = color
-    tablero[pos] = color
+    if(tablero[pos]){
+        alert("Este punto ya tiene un color")
+    }
+    else{
+        turno ++
+        btn.style.backgroundColor = color
+        tablero[pos] = color
+    }
 
     if(hasWon()){
         alert(`Player ${color} ha ganado!`)
@@ -48,6 +54,11 @@ const hasWon = () => {
     }
     else if(tablero[6] == tablero[4] && tablero[6] == tablero[2] && tablero[6]){
         return true
+    }
+    //Si se empato
+    else if(tablero[0] && tablero[0] && tablero[1] && tablero[2] && tablero[3] && tablero[4] && tablero[5] && tablero[6] && tablero[7] && tablero[8]){
+        alert("Empate!")
+        return false
     }
     //Si aun no se ganó
     else{
